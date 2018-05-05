@@ -34,6 +34,7 @@ namespace LibraryMgmt
             services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddScoped<ILibraryAsset, LibraryAssetService>();
+            services.AddScoped<ICheckout, CheckoutService>();
             services.AddDbContext<LibraryContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));
         }

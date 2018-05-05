@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\css\styles.css" />
     <Content Include="wwwroot\images\bldg.jpeg" />
     <Content Include="wwwroot\images\books.jpg" />
     <Content Include="wwwroot\images\catalog.png" />
