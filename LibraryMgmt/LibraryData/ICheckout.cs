@@ -11,7 +11,7 @@ namespace LibraryData
         Checkout GetById(int checkoutId);
         void Add(Checkout newCheckout);
         void CheckOutItem(int assetId, int libraryCardId);
-        void CheckInItem(int assetId, int libraryCardId);
+        void CheckInItem(int assetId);
         IEnumerable<CheckoutHistory> GetCheckoutHistory(int id);
         Checkout GetLatestCheckout(int assetId);
 
@@ -21,7 +21,7 @@ namespace LibraryData
         string GetCurrentHoldPatronName(int id);
         DateTime GetCurrentHoldPlaced(int id);
         IEnumerable<Hold> GetCurrentHolds(int id);
-
+        bool IsCheckedOut(int id);
         void MarkLost(int assetId);
         void MarkFound(int assetId);
     }

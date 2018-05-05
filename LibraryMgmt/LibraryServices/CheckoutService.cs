@@ -75,7 +75,7 @@ namespace LibraryServices
             _context.SaveChanges();
         }
 
-        public void CheckInItem(int assetId, int libraryCardId)
+        public void CheckInItem(int assetId)
         {
             var now = DateTime.Now;
 
@@ -96,6 +96,7 @@ namespace LibraryServices
             if (currentHolds.Any())
             {
                 CheckoutToEarliestHold(assetId, currentHolds);
+                return;
             }
 
             //otherwise, update the item status to available
@@ -147,7 +148,9 @@ namespace LibraryServices
         {
             var now = DateTime.Now;
 
-            var asset = _context.LibraryAssets.FirstOrDefault(a => a.Id == assetId);
+            var asset = _context.LibraryAssets
+                .Include(a => a.Status)        
+                .FirstOrDefault(a => a.Id == assetId);
 
             var card = _context.LibraryCards.FirstOrDefault(c => c.Id == libraryCardId);
 
@@ -208,6 +211,11 @@ namespace LibraryServices
 
             return patron.FirstName + " " + patron.LastName;
         }
+        public bool IsCheckedOut(int assetId)
+        {
+            return _context.Checkouts.Where(co => co.LibraryAsset.Id == assetId).Any();
+
+        }
 
         private void UpdateAssetStatus(int assetId, string v)
         {
@@ -250,11 +258,6 @@ namespace LibraryServices
         private DateTime GetDefaultCheckoutTime(DateTime now)
         {
             return now.AddDays(30);
-        }
-        private bool IsCheckedOut(int assetId)
-        {
-            return _context.Checkouts.Where(co => co.LibraryAsset.Id == assetId).Any();
-
         }
         private void CheckoutToEarliestHold(int assetId, IQueryable<Hold> currentHolds)
         {
