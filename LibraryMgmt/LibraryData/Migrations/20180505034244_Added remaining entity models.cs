@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace LibraryData.Migrations
 {
-    public partial class Addinitialentitymodels : Migration
+    public partial class Addedremainingentitymodels : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -88,7 +88,7 @@ namespace LibraryData.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "LibraryAssetets",
+                name: "LibraryAssets",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -108,15 +108,15 @@ namespace LibraryData.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LibraryAssetets", x => x.Id);
+                    table.PrimaryKey("PK_LibraryAssets", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_LibraryAssetets_LibraryBranches_LocationId",
+                        name: "FK_LibraryAssets_LibraryBranches_LocationId",
                         column: x => x.LocationId,
                         principalTable: "LibraryBranches",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_LibraryAssetets_Statuses_StatusId",
+                        name: "FK_LibraryAssets_Statuses_StatusId",
                         column: x => x.StatusId,
                         principalTable: "Statuses",
                         principalColumn: "Id",
@@ -138,9 +138,9 @@ namespace LibraryData.Migrations
                 {
                     table.PrimaryKey("PK_Checkouts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Checkouts_LibraryAssetets_LibraryAssetId",
+                        name: "FK_Checkouts_LibraryAssets_LibraryAssetId",
                         column: x => x.LibraryAssetId,
-                        principalTable: "LibraryAssetets",
+                        principalTable: "LibraryAssets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -166,9 +166,9 @@ namespace LibraryData.Migrations
                 {
                     table.PrimaryKey("PK_CheckoutHistories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CheckoutHistories_LibraryAssetets_LibraryAssetId",
+                        name: "FK_CheckoutHistories_LibraryAssets_LibraryAssetId",
                         column: x => x.LibraryAssetId,
-                        principalTable: "LibraryAssetets",
+                        principalTable: "LibraryAssets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -193,9 +193,9 @@ namespace LibraryData.Migrations
                 {
                     table.PrimaryKey("PK_Holds", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Holds_LibraryAssetets_LibraryAssetId",
+                        name: "FK_Holds_LibraryAssets_LibraryAssetId",
                         column: x => x.LibraryAssetId,
-                        principalTable: "LibraryAssetets",
+                        principalTable: "LibraryAssets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -252,13 +252,13 @@ namespace LibraryData.Migrations
                 column: "LibraryCardId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LibraryAssetets_LocationId",
-                table: "LibraryAssetets",
+                name: "IX_LibraryAssets_LocationId",
+                table: "LibraryAssets",
                 column: "LocationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LibraryAssetets_StatusId",
-                table: "LibraryAssetets",
+                name: "IX_LibraryAssets_StatusId",
+                table: "LibraryAssets",
                 column: "StatusId");
 
             migrationBuilder.AddForeignKey(
@@ -301,7 +301,7 @@ namespace LibraryData.Migrations
                 name: "Holds");
 
             migrationBuilder.DropTable(
-                name: "LibraryAssetets");
+                name: "LibraryAssets");
 
             migrationBuilder.DropTable(
                 name: "LibraryCards");

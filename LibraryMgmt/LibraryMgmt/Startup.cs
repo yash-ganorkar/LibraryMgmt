@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using LibraryData;
 using Microsoft.EntityFrameworkCore;
+using LibraryServices;
 
 namespace LibraryMgmt
 {
@@ -31,6 +32,8 @@ namespace LibraryMgmt
         {
             // Add framework services.
             services.AddMvc();
+            services.AddSingleton(Configuration);
+            services.AddScoped<ILibraryAsset, LibraryAssetService>();
             services.AddDbContext<LibraryContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));
         }

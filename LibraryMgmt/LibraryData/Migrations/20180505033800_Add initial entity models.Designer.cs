@@ -8,8 +8,8 @@ using LibraryData;
 namespace LibraryData.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20180505000955_Initial migration")]
-    partial class Initialmigration
+    [Migration("20180505033800_Add initial entity models")]
+    partial class Addinitialentitymodels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

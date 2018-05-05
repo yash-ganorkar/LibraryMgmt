@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace LibraryData.Migrations
 {
-    public partial class Initialmigration : Migration
+    public partial class Addinitialentitymodels : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

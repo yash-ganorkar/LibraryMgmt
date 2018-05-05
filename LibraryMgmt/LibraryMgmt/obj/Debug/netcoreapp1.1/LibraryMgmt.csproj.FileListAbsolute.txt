@@ -9,3 +9,5 @@ D:\DotNet\LibraryMgmt\LibraryMgmt\LibraryMgmt\bin\Debug\netcoreapp1.1\LibraryDat
 D:\DotNet\LibraryMgmt\LibraryMgmt\LibraryMgmt\bin\Debug\netcoreapp1.1\LibraryData.pdb
 D:\DotNet\LibraryMgmt\LibraryMgmt\LibraryMgmt\obj\Debug\netcoreapp1.1\LibraryMgmt.dll
 D:\DotNet\LibraryMgmt\LibraryMgmt\LibraryMgmt\obj\Debug\netcoreapp1.1\LibraryMgmt.pdb
+D:\DotNet\LibraryMgmt\LibraryMgmt\LibraryMgmt\bin\Debug\netcoreapp1.1\LibraryServices.dll
+D:\DotNet\LibraryMgmt\LibraryMgmt\LibraryMgmt\bin\Debug\netcoreapp1.1\LibraryServices.pdb

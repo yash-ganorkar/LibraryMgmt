@@ -129,7 +129,7 @@ namespace LibraryData.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("LibraryAssetets");
+                    b.ToTable("LibraryAssets");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("LibraryAsset");
                 });

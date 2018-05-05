@@ -8,8 +8,8 @@ using LibraryData;
 namespace LibraryData.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20180505010327_Add initial entity models")]
-    partial class Addinitialentitymodels
+    [Migration("20180505034244_Added remaining entity models")]
+    partial class Addedremainingentitymodels
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -130,7 +130,7 @@ namespace LibraryData.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("LibraryAssetets");
+                    b.ToTable("LibraryAssets");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("LibraryAsset");
                 });
