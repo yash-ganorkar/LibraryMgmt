@@ -4,6 +4,10 @@
     font-weight: bold;
 }
 
+th {
+    text-align :center
+}
+
     .logo > a {
         color: #ddd;
         text-decoration: none;
