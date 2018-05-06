@@ -205,3 +205,12 @@ th {
     color: #2f6fc7;
     font-weight: bold;
 }
+
+[class^="fa-"], [class*=" fa-"] {
+    display: inline-block;
+    width: 100%;
+}
+
+td a i {
+    text-align: center;
+}
